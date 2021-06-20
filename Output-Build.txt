@@ -1,0 +1,5 @@
+﻿Build started...
+1>------ Build started: Project: name-sorter, Configuration: Debug Any CPU ------
+1>C:\Users\Nala\Documents\SEI\Coding Challenges\GlobalX\name-sorter\name-sorter\Program.cs(52,2,52,2): error CS1513: } expected
+1>Done building project "name-sorter.csproj" -- FAILED.
+========== Build: 0 succeeded, 1 failed, 0 up-to-date, 0 skipped ==========

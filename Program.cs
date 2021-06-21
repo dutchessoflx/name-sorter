@@ -8,15 +8,15 @@ namespace name_sorter
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
-            var listAllNames = new List<string[]>();
+           
+            var listAllNames = new List<string[]>(); 
             var sortedNames = new List<string>();
             Console.WriteLine(args.Length);
             if (args.Length != 1)
             {
                 Console.WriteLine("Incorrect Arguments given");
                 return;
-            }
+            } // checks for a file to read
 
             var lines = File.ReadAllLines(args[0]);
 
@@ -25,7 +25,7 @@ namespace name_sorter
                     var fullName = lines[i].Split(' ');         
                     listAllNames.Add(fullName);
 
-                }
+                } //reads file line by line and adds full name to previously empty list "listAllNames"
 
             listAllNames.Sort((n1, n2) =>
                 {
@@ -37,7 +37,7 @@ namespace name_sorter
                             {
                                 return n1[n1.Length - 1].CompareTo(n2[n2.Length - 1]);
                             }
-                });
+                }); /// sort names alphabetically, first by checking if the surname is the same, to then sort by the full name, if the lasts names are different then sort those alphabetically
 
 
 
@@ -46,10 +46,11 @@ namespace name_sorter
                 {
                     var sortedFullName = String.Join(" ", listAllNames[j]);
                     sortedNames.Add(sortedFullName);
-                }
-            File.WriteAllLines("sorted-names-list.txt", sortedNames);
-            var sortedNamesObject = String.Join("\n", sortedNames);
-            Console.WriteLine(sortedNamesObject);
+                } // put this new sorted names into a list
+
+            File.WriteAllLines("sorted-names-list.txt", sortedNames); //write that list into a new file
+            var sortedNamesObject = String.Join("\n", sortedNames); //Turn that list into a string separated by new lines
+            Console.WriteLine(sortedNamesObject); // print to screen
 
 
         }
